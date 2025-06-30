@@ -13,7 +13,7 @@ export default {
       return locations_cn(request);
     } else if (path === "cdn-cgi/trace") {
       // 反代 cdn-cgi/trace 请求
-      let targetUrl = `https://speed.cloudflare.com/cdn-cgi/trace`;
+      let targetUrl = `https://	speedtest.inoribea.moe/cdn-cgi/trace`;
       let cfRequest = new Request(targetUrl, request);
       let response = await fetch(cfRequest);
       return response;
@@ -42,7 +42,7 @@ export default {
       }
     }
 
-    let targetUrl = `http${isSecure ? 's' : ''}://speed.cloudflare.com/__down?bytes=${bytes}`;
+    let targetUrl = `http${isSecure ? 's' : ''}://speedtest.inoribea.moe/__down?bytes=${bytes}`;
     let cfRequest = new Request(targetUrl, request);
     let response = await fetch(cfRequest);
 
@@ -52,7 +52,7 @@ export default {
 };
 
 async function locations_cn(request) {
-  const url = 'https://speed.cloudflare.com/locations';
+  const url = 'https://speedtest.inoribea.moe/locations';
 
   // 从指定 URL 获取内容
   const response = await fetch(url);
